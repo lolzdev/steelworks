@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "steelworks",
+  "version": "${version}",
+  "name": "Steelworks",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "GPL-3.0",
+  "icon": "assets/steelworks/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.lolzdev.steelworks.client.SteelworksDataGenerator"
+    ],
+    "client": [
+      "org.lolzdev.steelworks.client.SteelworksClient"
+    ],
+    "main": [
+      "org.lolzdev.steelworks.Steelworks"
+    ]
+  },
+  "mixins": [
+    "steelworks.mixins.json",
+    {
+      "config": "steelworks.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
